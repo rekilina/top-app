@@ -1,0 +1,20 @@
+.star, .star__svg {
+	width: 20px;
+	height: 20px;
+}
+
+.star + .star {
+	padding-left: 5px;
+}
+
+.filled {
+	fill: var(--primary);
+}
+
+.ghost {
+	fill: var(--primary);
+}
+
+.editable {
+	cursor: pointer;
+}
