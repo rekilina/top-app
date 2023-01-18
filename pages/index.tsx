@@ -3,9 +3,10 @@ import { Htag, Rating } from '../components';
 import { Button } from '../components';
 import { P } from '../components';
 import { Tag } from '../components';
+import { Layout, withLayout } from '../Layout/Layout';
 
 
-export default function Home(): JSX.Element {
+function Home(): JSX.Element {
 
   const [counter, setCounter] = useState<number>(0);
 
@@ -19,7 +20,7 @@ export default function Home(): JSX.Element {
   const [rating, setRating] = useState<number>(4);
 
   return (
-    <div>
+    <>
       <Htag tag="h2"> {counter} </Htag>
       <Button appearance='primary' arrow='right' onClick={() => setCounter(x => x + 1)}>+1</Button>
       <Button appearance='ghost' arrow='down' onClick={() => setCounter(x => x - 1)}>-1</Button>
@@ -38,6 +39,8 @@ export default function Home(): JSX.Element {
       <Tag size="s" color="ghost">Text</Tag>
       <Tag size="m" color="primary">Text</Tag>
       <Rating rating={rating} isEditable setRating={setRating}></Rating>
-    </div>
+    </>
   );
 }
+
+export default withLayout(Home);

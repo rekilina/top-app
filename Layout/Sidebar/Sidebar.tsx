@@ -4,8 +4,8 @@ import cn from 'classnames';
 
 export const Sidebar = ({ ...props }: SidebarProps): JSX.Element => {
 	return (
-		<div {...props}>
+		<aside {...props}>
 			Sidebar
-		</div>
+		</aside>
 	);
 };
