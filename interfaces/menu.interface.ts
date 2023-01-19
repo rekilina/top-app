@@ -1,9 +1,11 @@
+import { TopLevelCategory } from './page.interface'
 
 export interface MenuItem {
 	_id: {
 		secondCategory: string
 	}
-	pages: Page[]
+	pages: Page[];
+	isOpened?: boolean;
 }
 
 export interface Id {
@@ -15,4 +17,11 @@ export interface Page {
 	title: string
 	_id: string
 	category: string
+}
+
+export interface IFirstLevelMenuItem {
+	route: string;
+	name: string;
+	icon: JSX.Element;
+	id: TopLevelCategory;
 }
