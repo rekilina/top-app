@@ -14,9 +14,9 @@ import { TopLevelCategory } from '../../interfaces/page.interface';
 
 const firstLevelMenu: IFirstLevelMenuItem[] = [
 	{ route: 'courses', name: 'Курсы', icon: <HatIcon />, id: TopLevelCategory.Courses },
-	{ route: 'serices', name: 'Сервисы', icon: <CloudIcon />, id: TopLevelCategory.Courses },
-	{ route: 'books', name: 'Книги', icon: <BookIcon />, id: TopLevelCategory.Courses },
-	{ route: 'products', name: 'Товары', icon: <BoxIcon />, id: TopLevelCategory.Courses }
+	{ route: 'serices', name: 'Сервисы', icon: <CloudIcon />, id: TopLevelCategory.Services },
+	{ route: 'books', name: 'Книги', icon: <BookIcon />, id: TopLevelCategory.Books },
+	{ route: 'products', name: 'Товары', icon: <BoxIcon />, id: TopLevelCategory.Products }
 ];
 
 export const Menu = (): JSX.Element => {
@@ -65,7 +65,7 @@ export const Menu = (): JSX.Element => {
 		return (
 			pages.map(p => (
 				// eslint-disable-next-line react/jsx-key
-				<a href={`/${route}/${p.alias}`} className={cn(styles.thirdLevel, {
+				<a key={p.alias} href={`/${route}/${p.alias}`} className={cn(styles.thirdLevel, {
 					[styles.thirdLevelActive]: true
 				})}>
 					{p.category}
